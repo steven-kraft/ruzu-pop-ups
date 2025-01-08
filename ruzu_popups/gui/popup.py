@@ -211,6 +211,8 @@ class RuzuPopup(QDialog):
 
         # Collect card details (html, css, buttons)
         current_card = self.anki_utils.get_current_card()
+        if not current_card:
+            return
         self.current_card_id = current_card['card_id']
         self.logger.debug('Setting current card to %s' % current_card['card_id'])
         self.update_card(current_card['question'])
