@@ -105,7 +105,7 @@ class AnkiUtils:
 
     def get_current_card(self):
         if not self.review_is_active():
-            raise Exception('There was an issue getting the current card because review is not currently active.')
+            return
 
         reviewer = self.reviewer()
         card = reviewer.card
